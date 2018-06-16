@@ -1,0 +1,11 @@
+clc;
+close all;
+clear all;
+%%Z transform
+syms pi n y w;
+xn=input('Enter the sequence:');
+y=ztrans(xn)
+num=input('Enter the coefficient of numerator');
+den=input('Enter the coefficient of denomntor');
+
+freqz(num,den)

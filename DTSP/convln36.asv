@@ -1,0 +1,15 @@
+clc;
+close all;
+clear all;
+%ciruclar convolution
+N=input('Enter the no of smaples');
+xn=input('Enter the first sequence');
+hn=input('Enter the impulse respnonse');
+l=length(xn);
+m=length(hn);
+xk=fft(xn1);
+h=input('ENter sequence');
+Hk1=fft(hn1)
+Yk1=Hk1.*xk1
+display(Yk1);
+z=ifft(Yk1,N)

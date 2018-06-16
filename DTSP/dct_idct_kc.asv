@@ -1,0 +1,37 @@
+clc;
+clear all;
+close all;
+fp = fopen('watermark.wav', 'r');
+fseek(fp, 44, -1)
+a = fread(fp, 1024);
+plot(a);
+hold on;
+title('Plot  of Original speech signal');
+xlabel('sample number');
+ylabel('Amplitude');
+
+
+c = dct(a);
+plot(c);
+hold on
+title('Plot  of frequency contents of speech signal in DCT domain');
+xlabel('DCT Coefficient number');
+ylabel('Amplitude');
+
+
+for i = 1:104
+    d1(i)= c(i);
+end
+
+for i = 105:1023
+    d1(i)= 0;
+end
+figure;
+plot(d1);
+title('Plot  of Original speech signal');
+xlabel('sample number');
+ylabel('Amplitude');
+
+d2 = idct(d1);
+figure;
+plot(d2);
